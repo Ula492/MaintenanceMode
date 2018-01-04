@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MaintanceMode">
+    <output-path>$USER_HOME$/Desktop/1.12.2Server/plugins</output-path>
+    <root id="archive" name="MaintanceMode.jar">
+      <element id="module-output" name="MaintenanceMode" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>
