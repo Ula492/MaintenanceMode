@@ -1,5 +1,5 @@
 name: MaintenanceMode
-version: 1.0
+version: 1.1.0
 main: com.ula.mm.main
 description: "Set your server on Maintenance Mode with this open source plugin."
 author: Ula492

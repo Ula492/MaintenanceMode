@@ -2,6 +2,8 @@ package com.ula.mm;
 
 import com.ula.mm.GUI.mmgui;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.FileConfigurationOptions;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -15,9 +17,20 @@ public class main extends JavaPlugin implements Listener{
         return instance;
     }
 
+   public  FileConfiguration config = getConfig();
+
     public void onEnable(){
         Bukkit.getConsoleSender().sendMessage("§ePlugin MaintenanceMode Enabled v1.0");
 
+
+        config.addDefault("Countdown", 5);
+        config.addDefault("MOTDOn", " - MaintenanceMode ON  -");
+        config.addDefault("MOTDOff", " - MaintenanceMode OFF  -");
+        config.addDefault("KickMessage", " §4§lServer has begun its Maintenance Mode, try re-joining later!");
+        config.addDefault("FakePlayersON", 0);
+        config.addDefault("FakePlayersOFF", 10000);
+        config.options().copyDefaults(true);
+        saveConfig();
 
         this.getServer().getMessenger().registerOutgoingPluginChannel((Plugin)this, "BungeeCord");
         plugin = this;
